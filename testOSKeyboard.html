@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: #ffaa30;
+            /*position: absolute;*/
+            left: 50px;
+            float: left;
+            /*top: 0px;*/
+        }
+
+        #div2 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #div3 {
+            width: 250px;
+            height: 250px;
+            background-color: #2a27ff;
+            position: absolute;
+        }
+
+        input{
+            width: 100px;
+            height: 40px;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+    <title>系统键盘弹出</title>
+
+</head>
+<body>
+
+<input type="text" value="text">
+<input type="tel" value="tel">
+<input type="number" value="number">
+<input type="email" value="email">
+<input type="url" value="url">
+<input type="date" id="date">
+<input id= "time" type="time" >
+
+<input type="button" id="btn" value="显示日期">
+<!--<div id="div1">-->
+    <!--<div id="div2"></div>-->
+<!--</div>-->
+
+<!--<div id="div3"></div>-->
+
+<div id="show"></div>
+<script>
+    var time = document.getElementById("date");
+    var showE = document.getElementById("show");
+
+    var btn = document.getElementById("btn");
+    btn.onclick = function (ev) {
+
+        console.log(time.value);
+        alert(time.value);
+        showE.innerText = time.value;
+    }
+
+</script>
+</body>
+</html>

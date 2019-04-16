@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchBar</title>
+    <link rel="stylesheet" href="searchBarView.css">
+
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.js"></script>
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.data.js"></script>
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.commodel.js"></script>
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.serializer.js"></script>
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.net.js"></script>
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.resources.js"></script>
+
+
+    <script src="https://lc.dbazure.cn/dbfxui/dbfx.web.theme.js"></script>
+    <script src="https://lc.dbazure.cn/dbfxui/dbfx.web.controls.js"></script>
+    <script src="https://lc.dbazure.cn/dbfxui/dbfx.web.listcontrols.js"></script>
+    <script src="https://lc.dbazure.cn/dbfxui/dbfx.web.navigation.js"></script>
+    <script src="https://lc.dbazure.cn/dbfx/dbfx.app.js"></script>
+
+
+    <script src="searchBarView.js"></script>
+</head>
+<body>
+<div id="div" style="height: 200px;width: 600px;border: 1px solid #ffaa30"></div>
+
+<!--<DIV class="SearchBarView">-->
+    <!--<DIV class="SearchBarViewContainer">-->
+        <!--<IMG class="SearchBarViewSearchIcon">-->
+        <!--<DIV class="SearchBarViewSearchBox">-->
+            <!--<INPUT class="SearchBarViewSearchInputBox">-->
+        <!--</DIV>-->
+        <!--<DIV class="SearchBarViewSearchButton">-->
+            <!--<IMG class="SearchBarViewSearchButtonImg">-->
+            <!--<SPAN class="SearchBarViewSearchButtonText"></SPAN>-->
+        <!--</DIV>-->
+        <!--<DIV class="SearchBarViewResultsList">-->
+        <!--</DIV>-->
+    <!--</DIV>-->
+<!--</DIV>-->
+
+<script>
+    var sbv = new DBFX.Web.Controls.SearchBarView();
+    var divE = document.getElementById("div");
+    // sbv.SetHeight("40px");
+    sbv.SetWidth("500px");
+    divE.appendChild(sbv.VisualElement);
+
+    // sbv.BorderRadius = "20px";
+    sbv.Placeholder = "请输入……";
+    sbv.Color = "black";
+    // console.log(new Date(2018,5,21,12,32,22));
+
+
+</script>
+</body>
+</html>
