@@ -1,0 +1,130 @@
+
+/*搜索视图*/
+.SearchBox {
+    /*width: 600px;*/
+    height: 40px;
+    border: 2px solid dimgray;
+    box-sizing: border-box;
+}
+
+/*搜索视图外观*/
+.SearchBox .SearchBoxContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/*搜索图标*/
+.SearchBox .SearchBoxSearchIcon {
+    width: 5%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid aqua;*/
+}
+
+.SearchBox .SearchBoxSearchIconImg {
+    width: 80%;
+
+
+}
+
+/*搜索框*/
+.SearchBox .SearchBoxSearchBox {
+    height: 100%;
+    width: 75%;
+    display: inline-block;
+    float: left;
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /*border: 1px solid #ffaa30;*/
+
+}
+
+/*输入框*/
+.SearchBox .SearchBoxSearchInputBox {
+    display: inline-block;
+    width: 92%;
+    height: 90%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    color: #3c3f41;
+
+}
+
+/*搜索按钮*/
+.SearchBox .SearchBoxSearchButton {
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+    box-sizing: border-box;
+    display: flex; /* IE10 */
+    display: flexbox; /* IE10 */
+    display: -moz-box; /* Firefox */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #696969;
+    /*border: 1px solid seagreen;*/
+
+    /*文字取消选中效果*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.SearchBox .SearchBoxSearchButton:hover {
+    cursor: pointer;
+    /*color: #ffaa30;*/
+    background-color: #858889;
+}
+
+    /*搜索按钮图标*/
+.SearchBox .SearchBoxSearchButtonImg {
+    height: 80%;
+    /*margin-left: 5px;*/
+
+}
+
+/*按钮文字*/
+.SearchBox .SearchBoxSearchButtonText {
+    display: inline-block;
+    width: 80%;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+
+}
+
+/*搜索结果展示列表*/
+.SearchBox .SearchBoxResultsList {
+    /*width: 100%;*/
+    min-height: 40px;
+    max-height: 400px;
+    position: absolute;
+    z-index: 7000;
+    box-sizing: border-box;
+    left: -2px;
+    right: -2px;
+    top: 40px;
+    border: 1px solid red;
+    display: none;
+    overflow: auto;
+
+}
