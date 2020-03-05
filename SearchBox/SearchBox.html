@@ -23,7 +23,10 @@
     <script src="SearchBox.js"></script>
 </head>
 <body>
+<!--<div id="div1" style="height: 100px;width: 400px;border: 1px solid #6786ff"></div>-->
 <div id="div" style="height: 200px;width: 600px;border: 1px solid #ffaa30"></div>
+<button id="btn" style="width: 80px;height: 30px;"></button>
+
 
 <!--<DIV class="SearchBox">-->
     <!--<DIV class="SearchBoxContainer">-->
@@ -43,15 +46,191 @@
 <script>
     var sbv = new DBFX.Web.Controls.SearchBox();
     var divE = document.getElementById("div");
-    // sbv.SetHeight("40px");
+    sbv.SetHeight("40px");
     sbv.SetWidth("500px");
     divE.appendChild(sbv.VisualElement);
 
     // sbv.BorderRadius = "20px";
     sbv.Placeholder = "请输入……";
-    sbv.Color = "black";
+    sbv.Color = "#527aff";
     // console.log(new Date(2018,5,21,12,32,22));
 
+    // var btn = document.getElementById("div1");
+    // btn.onmousedown = function (ev) {
+    //     // ev.preventDefault();
+    //     btn.focus();
+    //     console.log("world");
+    // }
+    // btn.ontouchstart = function (ev) {
+    //     ev.preventDefault();
+    //     console.log("hello");
+    //     // btn.focus();
+    // }
+
+
+
+    var btn = document.getElementById("btn");
+    btn.onclick = function (ev) {
+        window.location.assign("http://localhost:63342/SearchBar/searchBarView/searchBarView.html?_ijt=kcgqk9em0dt3hg547kk3lu2pdd");
+    }
+
+
+
+    var Converter = new Object();
+
+    Converter.ToString = function(ov, format)
+    {
+
+        var rv= "";
+        if (ov == undefined)
+            ov = "";
+
+
+        if (format == undefined || format==""){
+            rv=ov;
+        } else if (format == "C") {
+            var v = ov*1;
+            rv = v.toFixed(2);
+            var lang = navigator.language || navigator.browserLanguage;
+
+            if (lang.toLowerCase().indexOf("zh-cn") >= 0)
+                rv = "￥" + rv;
+            else
+                rv = "$" + rv;
+
+        } else if (format.toLowerCase() == "yyyy-mm-dd" || format.toLowerCase() == "yyyy-mm-dd hh:mm:ss" || format.toLowerCase() == "yyyy-mm" || format.toLowerCase() == "hh:mm:ss" || format.toLowerCase() == "hh:mm")
+        {
+            rv = Converter.ToDateString(ov,format);
+
+        } else if (format.indexOf("##0") >= 0 || format.indexOf("0.00") >= 0) {
+
+            var v1=ov*1.0;
+            if(isNaN(v1))
+                v1=0;
+
+            var fs = format.split(".");
+            if (fs.length > 1) {
+                rv = v1.toFixed(fs[1].length);
+            } else {
+                rv = v1.toFixed(0);
+            }
+
+        } else {
+
+            var ns = ov.toString().split(".");
+            var fns = format.split(".");
+
+            if (ns[0].length < fns[0].length)
+                rv = fns[0].substring(0, (fns[0].length - ns[0].length)) + ns;
+            else
+                rv = ov;
+        }
+
+        return rv;
+    }
+
+    Converter.ToDateString = function (ov,format) {
+        var rv = "";
+        //通过判断屏蔽错误的日期格式
+        if (ov == undefined || ov == null || (typeof ov == "number")){
+            rv = "无效的日期";
+            return rv;
+        }
+
+        if (format == undefined || format=="")
+            rv=ov;
+
+        if(ov.getSeconds == undefined){
+
+            ov = new Date(ov);
+        }
+
+        if(isNaN(ov)){
+            try{
+                ov = new Date(ov.replace("-", "/"));
+            }catch (ex){
+                rv = "无效的日期";
+                return rv;
+            }
+        }
+
+        //处理时间格式
+        format = format.toLowerCase().trim();
+        switch (format){
+
+            case "yyyy-mm-dd":
+                if(!isNaN(ov)){
+                    rv = ov.getFullYear().ToString(2) + "-" + (ov.getMonth() + 1).ToString(2) + "-" + ov.getDate().ToString(2);
+                }else {
+                    rv = "无效的日期";
+                }
+                break;
+
+            case "hh:mm:ss":
+                if(!isNaN(ov)){
+                    rv = ov.getHours().ToString(2) + ":" + ov.getMinutes().ToString(2) + ":" + ov.getSeconds().ToString(2);
+                }else {
+                    rv = "无效的日期";
+                }
+                break;
+
+            case "hh:mm":
+                if(!isNaN(ov)){
+                    rv = ov.getHours().ToString(2) + ":" + ov.getMinutes().ToString(2);
+                }else {
+                    rv = "无效的日期";
+                }
+                break;
+            case "yyyy-mm":
+                if(!isNaN(ov)){
+                    rv = ov.getFullYear() + "-" + (ov.getMonth() + 1).ToString(2);
+                }else {
+                    rv = "无效的日期";
+                }
+                break;
+
+            case "yyyy-mm-dd hh:mm:ss":
+            default:
+                if(!isNaN(ov)){
+                    rv = ov.getFullYear() + "-" + (ov.getMonth() + 1).ToString(2) + "-" + ov.getDate().ToString(2) + " " + ov.getHours().ToString(2) + ":" + ov.getMinutes().ToString(2) + ":" + ov.getSeconds().ToString(2);
+                }else {
+                    rv = "无效的日期";
+                }
+                break;
+        }
+
+        return rv;
+    }
+
+
+    console.log(Converter.ToString("123","##0.00"));
+
+
+
+    var date = new Date();
+    console.log(date);
+    var date1 = new Date(1542344555);
+    console.log(date1);
+    var date2 = new Date("1949-11-18 20:08:30");
+    console.log(date2);
+
+    var date3 = new Date(2019,24,30);
+    console.log(date3);
+
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    console.log(month);
+    var year2 = date2.getFullYear();
+
+    var age = date.getFullYear() - date2.getFullYear();
+
+    console.log(age);
+
+    var dateTime = date.getTime();
+    console.log(dateTime);
+
+    var dateTime2 = date2.getTime();
+    console.log(dateTime2);
 
 </script>
 </body>

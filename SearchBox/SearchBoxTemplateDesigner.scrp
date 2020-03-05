@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<screenpart BackgroundColor="Transparent" HorizonScrollbar="Hidden" Margin="0px" Padding="0px" Serializer="DBFX.Serializer.FormPartSerializer">
+  <xns>
+    <ns k="wc"  n="DBFX.Web.Controls" />
+    <ns k="lc"  n="DBFX.Web.LayoutControls" />
+    <ns k="dv"  n="DBFX.Design" />
+  </xns>
+  <controls>
+
+    <c T="wc:Label" Text="数据模板:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:Button" Name="btnEditDataTemplate" Text="编辑模板" Display="block" Margin="2px" />
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="设置分组:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:Button" Name="btnEditGroup" Text="编辑分组" Display="block" Margin="2px" />
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="对象分类:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:Button" Name="btnEditObjTypes" Text="编辑对象分类" Display="block" Margin="2px" />
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="分类属性:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:TextBox"  Text="" Display="block" Margin="2px"  DataBindings="{&quot;Path&quot;:&quot;ObjTypeProperty&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="正常模板:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:TextBox"  Text="" Display="block" Margin="2px"  DataBindings="{&quot;Path&quot;:&quot;ItemTemplate&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="选定模板:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:TextBox"  Text="" Display="block" Margin="2px"  DataBindings="{&quot;Path&quot;:&quot;ItemSelectedTemplate&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="选定前景颜色:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:ColorPicker" Name="cpBorderColor"   Margin="2px 14px 2px 16px"  MinWidth="64px" Height="26px"   Display="block"    DataBindings="{&quot;Path&quot;:&quot;SelectedItemColor&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="选定背景颜色:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:ColorPicker" Name="cpBorderColor"   Margin="2px 14px 2px 16px"  MinWidth="64px" Height="26px"   Display="block"    DataBindings="{&quot;Path&quot;:&quot;SelectedItemBackColor&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:Label" Text="选定边框颜色:" Float="left"  Margin="2px 2px 2px 16px" />
+    <c T="wc:ColorPicker" Name="cpBorderColor"   Margin="2px 14px 2px 16px"  MinWidth="64px" Height="26px"   Display="block"    DataBindings="{&quot;Path&quot;:&quot;SelectedItemBorderColor&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}"/>
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+
+    <c T="wc:CheckedBox" Text="纵向排列项目" Margin="2px 2px 2px 16px" DataBindings="{&quot;Path&quot;:&quot;FillFullRow&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}" />
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+    <c T="wc:CheckedBox" Text="横向单行排列项目" Margin="2px 2px 2px 16px" DataBindings="{&quot;Path&quot;:&quot;SingleRow&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}" />
+    <c T="wc:BreakLine" BackgroundColor="lightgray"  Height="1px" Margin="8px 2px 2px 2px" />
+
+  </controls>
+</screenpart>

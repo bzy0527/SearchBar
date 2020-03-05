@@ -24,8 +24,8 @@
            <c T="wc:TextBox" Display="block" Height="26px" Margin="2px 14px 2px 16px" DataBindings="{&quot;Path&quot;:&quot;Placeholder&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}" />
 
            <c T="wc:BreakLine" />
-           <c T="wc:Label" Text="搜索结果展示页面:" Margin="4px 2px 2px 16px" Float="left"/>
-           <c T="wc:TextBox" Display="block" Height="26px" Margin="2px 14px 2px 16px" DataBindings="{&quot;Path&quot;:&quot;ResultResourceUri&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}" />
+           <c T="wc:Label" Text="结果列表高度:" Margin="4px 2px 2px 16px" Float="left"/>
+           <c T="wc:TextBox" Display="block" Height="26px" Margin="2px 14px 2px 16px" DataBindings="{&quot;Path&quot;:&quot;ResultListH&quot;,&quot;Mode&quot;:&quot;OneWay&quot;,&quot;Source&quot;:&quot;&quot;}" />
 
            </controls>
        </c>
