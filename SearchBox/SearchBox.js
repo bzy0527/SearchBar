@@ -4,7 +4,6 @@ DBFX.RegisterNamespace("DBFX.Design");
 DBFX.RegisterNamespace("DBFX.Serializer");
 DBFX.RegisterNamespace("DBFX.Design.ControlDesigners");
 
-
 DBFX.Web.Controls.SearchBox = function () {
     var sbx = new DBFX.Web.Controls.Control("SearchBox");
     sbx.ClassDescriptor.Designers.splice(1, 0, "DBFX.Design.ControlDesigners.SearchBoxDesigner");
@@ -12,8 +11,7 @@ DBFX.Web.Controls.SearchBox = function () {
     sbx.ClassDescriptor.Serializer = "DBFX.Serializer.SearchBoxSerializer";
     sbx.VisualElement = document.createElement("DIV");
     sbx.VisualElement.className = "SearchBox";
-
-
+    
     sbx.Groups = [];
     sbx.Templates = new Object();
     sbx.ClientDiv = sbx.VisualElement;
